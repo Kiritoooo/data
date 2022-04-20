@@ -13,4 +13,7 @@ docker run -d --name redis --restart=always redis
 cloudreve
 docker run -d -v /data/cloudreve/conf.ini:/cloudreve/conf.ini -v /data/cloudreve/avatar:/cloudreve/avatar -v /data/cloudreve/uploads:/cloudreve/uploads -v /data/cloudreve/downloads:/cloudreve/downloads --name cloudreve --restart=always cloudreve/cloudreve
 
+aria2
+docker run -d -e PUID=$UID -e PGID=$GID -e UMASK_SET=022 -e RPC_SECRET=password -v /data/aria2/config:/config -v /data/aria2/downloads:/downloads --name aria2 p3terx/aria2-pro
+
 docker exec -it {CONTAINER NAME} bash
